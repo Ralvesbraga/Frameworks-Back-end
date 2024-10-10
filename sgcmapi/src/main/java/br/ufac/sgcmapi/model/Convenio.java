@@ -2,15 +2,31 @@ package br.ufac.sgcmapi.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 public class Convenio implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)    
     private Long id;
+
+    @Column(nullable = false)
     private String nome;
+    @Column(nullable = false)
     private String razaoSocial;
+    @Column(nullable = false)
     private String cnpj;
+    @Column(nullable = false)
     private String representante;
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
     private String telefone;
+    @Column(nullable = false)
     private boolean ativo = true;
     
     public Long getId() {
